@@ -285,7 +285,7 @@
     UIScrollView *scrollView = (UIScrollView *)self.viewToAutoScroll;
     CGRect convertedKeyboardFrame = [[scrollView superview] convertRect:_visibleKeyboardFrame fromView:nil];
     CGRect intersectsRect = CGRectIntersection(scrollView.frame, convertedKeyboardFrame);
-    if (intersectsRect.size.height > 0.0) {
+    if (intersectsRect.size.height > (CGFLOAT_TYPE)0.0) {
 	UIEdgeInsets contentInset;
 	UIEdgeInsets scrollIndicatorInsets;
 	

@@ -63,22 +63,22 @@
      */
     CGFloat canvasWidth = bounds.size.width;
     CGFloat canvasHeight = bounds.size.height;
-    CGFloat bangTopWidth = canvasWidth*0.15;
-    CGFloat bangBotWidth = canvasWidth*0.08;
+    CGFloat bangTopWidth = canvasWidth*(CGFLOAT_TYPE)0.15;
+    CGFloat bangBotWidth = canvasWidth*(CGFLOAT_TYPE)0.08;
     
     // Draw top
-    CGContextMoveToPoint(c, canvasWidth/2.0 - bangTopWidth/2.0, canvasHeight*0.3);
-    CGContextAddQuadCurveToPoint(c, canvasWidth/2.0, canvasHeight*0.2,  canvasWidth/2.0 + bangTopWidth/2.0, canvasHeight*0.3);
-    CGContextAddLineToPoint(c, canvasWidth/2.0 + bangBotWidth/2.0, canvasHeight*0.65);
-    CGContextAddQuadCurveToPoint(c, canvasWidth/2.0, canvasHeight*0.7, canvasWidth/2.0 - bangBotWidth/2.0, canvasHeight*0.65);
+    CGContextMoveToPoint(c, canvasWidth/(CGFLOAT_TYPE)2.0 - bangTopWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.3);
+    CGContextAddQuadCurveToPoint(c, canvasWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.2,  canvasWidth/(CGFLOAT_TYPE)2.0 + bangTopWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.3);
+    CGContextAddLineToPoint(c, canvasWidth/(CGFLOAT_TYPE)2.0 + bangBotWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.65);
+    CGContextAddQuadCurveToPoint(c, canvasWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.7, canvasWidth/(CGFLOAT_TYPE)2.0 - bangBotWidth/(CGFLOAT_TYPE)2.0, canvasHeight*(CGFLOAT_TYPE)0.65);
     CGContextClosePath(c);
     CGContextSetFillColorWithColor(c, [UIColor blackColor].CGColor);
     CGContextFillPath(c);
 
     // Draw dot
     CGFloat radius = bangBotWidth;
-    CGFloat centerX = canvasWidth/2;
-    CGFloat centerY = canvasHeight*0.8;
+    CGFloat centerX = canvasWidth/(CGFLOAT_TYPE)2;
+    CGFloat centerY = canvasHeight*(CGFLOAT_TYPE)0.8;
     CGContextAddEllipseInRect(c, CGRectMake(centerX - radius, centerY - radius, radius*2, radius*2));
     CGContextSetFillColorWithColor(c, [UIColor blackColor].CGColor);
     CGContextFillPath(c);
