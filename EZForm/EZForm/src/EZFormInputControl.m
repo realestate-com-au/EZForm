@@ -54,6 +54,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self.subviews enumerateObjectsUsingBlock:^(id obj, __unused NSUInteger idx, BOOL *stop) {
 	if ([obj isKindOfClass:[UILabel class]]) {
 	    self.wrappedView = obj;
