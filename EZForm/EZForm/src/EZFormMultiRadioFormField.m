@@ -71,7 +71,7 @@
 {
     [self unsetActualFieldValue:value];
 
-    if (self.mutuallyExclusiveChoice && [self.selectedChoiceKeys count] == 0 && ![value isEqual:self.mutuallyExclusiveChoice]) {
+    if (self.mutuallyExclusiveChoice && [self.selectedChoiceKeys count] == 0 && ![(NSString *)value isEqual:self.mutuallyExclusiveChoice]) {
         [self setFieldValue:self.mutuallyExclusiveChoice];
     }
 
@@ -100,7 +100,7 @@
 
 - (void)setActualFieldValue:(id)value {
     if (value) {
-        if (self.mutuallyExclusiveChoice != nil && [value isEqual:self.mutuallyExclusiveChoice]) {
+        if (self.mutuallyExclusiveChoice != nil && [(NSString *)value isEqual:self.mutuallyExclusiveChoice]) {
             [self unsetAllFieldValues];
         }
         else if ([self.selectedChoiceKeys containsObject:self.mutuallyExclusiveChoice]) {

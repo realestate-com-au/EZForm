@@ -52,7 +52,7 @@ EZFormValidateNumericInputWithLimits(id input, NSInteger min, NSInteger max)
     
     if ([(NSString *)input length] > 0) {
 	// Restrict to specified range of numbers
-	NSInteger value = [input integerValue];
+	NSInteger value = [(NSString *)input integerValue];
 	if ((min != NSNotFound && value < min) || (max != NSNotFound && value > max)) {
 	    return NO;
 	}

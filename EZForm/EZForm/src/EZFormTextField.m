@@ -282,8 +282,11 @@
 
 - (void)updateUIWithValue:(NSString *)value
 {
-    if ([(id)self.userControl respondsToSelector:NSSelectorFromString(@"setText:")]) {
-	[(id)self.userControl setText:value];
+    // Assume for the sake of argument that `userControl` is a label even though
+    // it might not be, in order to remove a "Messaging unqualified id" warning.
+    UILabel *assumedLabel = (UILabel *)self.userControl;
+    if ([assumedLabel respondsToSelector:NSSelectorFromString(@"setText:")]) {
+	[assumedLabel setText:value];
     }
     
     [self updateValidityIndicators];

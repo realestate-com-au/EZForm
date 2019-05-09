@@ -95,7 +95,7 @@
     [self.slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
     self.slider.maximumValue = self.maximumValue;
     self.slider.minimumValue = self.minimumValue;
-    self.slider.value = [[self actualFieldValue] floatValue];
+    self.slider.value = [(NSNumber *)[self actualFieldValue] floatValue];
     self.slider.continuous = self.continuous;
 }
 

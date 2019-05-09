@@ -544,8 +544,8 @@
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification
 {
-    _visibleKeyboardFrame = [[notification userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    _keyboardAnimationDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    _visibleKeyboardFrame = [(NSValue *)[notification userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    _keyboardAnimationDuration = [(NSNumber *)[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 
     EZFormField *formField = [self formFieldForFirstResponder];
     BOOL shouldAutoScroll = (self.viewToAutoScroll && (! [self.viewToAutoScroll isKindOfClass:[UITableView class]]) && formField);
@@ -566,15 +566,15 @@
     _visibleKeyboardFrame = CGRectZero;
     
     if (self.viewToAutoScroll) {
-	NSTimeInterval animationDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	NSTimeInterval animationDuration = [(NSNumber *)[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
         [self revertAutoScrolledViewAnimationDuration:animationDuration];
     }
 }
 
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)notification
 {
-    _visibleKeyboardFrame = [[notification userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    _keyboardAnimationDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    _visibleKeyboardFrame = [(NSValue *)[notification userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    _keyboardAnimationDuration = [(NSNumber *)[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 }
 
 
