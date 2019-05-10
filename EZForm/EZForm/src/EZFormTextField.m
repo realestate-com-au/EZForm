@@ -282,8 +282,8 @@
 
 - (void)updateUIWithValue:(NSString *)value
 {
-    if ([(id)self.userControl respondsToSelector:NSSelectorFromString(@"setText:")]) {
-	[(id)self.userControl setText:value];
+    if ([self.userControl respondsToSelector:@selector(setText:)]) {
+        [self.userControl performSelector:@selector(setText:) withObject:value];
     }
     
     [self updateValidityIndicators];

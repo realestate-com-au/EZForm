@@ -55,7 +55,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self.subviews enumerateObjectsUsingBlock:^(id obj, __unused NSUInteger idx, BOOL *stop) {
+    [self.subviews enumerateObjectsUsingBlock:^(UILabel *obj, __unused NSUInteger idx, BOOL *stop) {
 	if ([obj isKindOfClass:[UILabel class]]) {
 	    self.wrappedView = obj;
 	    *stop = YES;
@@ -91,12 +91,12 @@
 
 - (void)setText:(NSString *)text
 {
-    [(id)self.wrappedView setText:text];
+    [(UITextField *)self.wrappedView setText:text];
 }
 
 - (NSString *)text
 {
-    return [(id)self.wrappedView text];
+    return [(UITextField *)self.wrappedView text];
 }
 
 

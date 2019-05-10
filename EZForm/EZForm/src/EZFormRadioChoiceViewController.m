@@ -93,7 +93,7 @@
     NSString *choiceKey = [field choiceKeys][(NSUInteger)indexPath.row];
     cell.textLabel.text = [field.choices valueForKey:choiceKey];
 
-    id modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
+    NSArray *modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
     if (modelValueArray != nil && ![modelValueArray isKindOfClass:[NSArray class]]) {
         modelValueArray = @[modelValueArray];
     }
@@ -116,7 +116,7 @@
     EZFormRadioField *field = [self.form formFieldForKey:self.radioFieldKey];
     NSString *choiceKey = [field choiceKeys][(NSUInteger)indexPath.row];
 
-    id modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
+    NSArray *modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
     if (modelValueArray != nil && ![modelValueArray isKindOfClass:[NSArray class]]) {
         modelValueArray = @[modelValueArray];
     }
@@ -138,7 +138,7 @@
 
 - (void)updateCellCheckmarks
 {
-    id modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
+    NSArray *modelValueArray = [self.form modelValueForKey:self.radioFieldKey];
     if (modelValueArray != nil && ![modelValueArray isKindOfClass:[NSArray class]]) {
         modelValueArray = @[modelValueArray];
     }
@@ -151,7 +151,7 @@
         NSString *choiceKey = choiceKeys[(NSUInteger)indexPath.row];
         __block BOOL selected = NO;
 
-        [(NSArray *)modelValueArray enumerateObjectsUsingBlock:^(id selection, __unused NSUInteger idx, BOOL *stop) {
+        [(NSArray *)modelValueArray enumerateObjectsUsingBlock:^(NSString *selection, __unused NSUInteger idx, BOOL *stop) {
             if ([selection isEqualToString:choiceKey]) {
                 selected = YES;
                 *stop = YES;

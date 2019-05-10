@@ -115,11 +115,11 @@
 
 - (void)setActualFieldValue:(id)value
 {
-    if ([value isKindOfClass: [NSDate class]]) {
-        self.internalValue = value;
+    if ([(NSDate *)value isKindOfClass: [NSDate class]]) {
+        self.internalValue = (NSDate *)value;
     }
-    else if ([value isKindOfClass: [NSString class]]) {
-        self.internalValue = [self.inDateFormatter dateFromString: value];
+    else if ([(NSString *)value isKindOfClass: [NSString class]]) {
+        self.internalValue = [self.inDateFormatter dateFromString: (NSString *)value];
     }
     else {
         self.internalValue = nil;

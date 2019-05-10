@@ -154,7 +154,7 @@ typedef enum {
 
 - (void)setActualFieldValue:(id)value
 {
-    _internalValue = [value boolValue];
+    _internalValue = [(NSNumber *)value boolValue];
 }
 
 - (UIView *)userView
