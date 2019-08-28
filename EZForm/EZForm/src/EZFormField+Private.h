@@ -28,6 +28,6 @@
 
 @interface EZFormField (Private)
 
-@property (nonatomic, assign, readwrite) EZForm *form;
+@property (nonatomic, weak, readwrite) EZForm *form;
 
 @end
