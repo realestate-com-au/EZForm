@@ -283,11 +283,11 @@
 			};
 			buildConfigurationList = 839EE8C1169529DE00B9DCA8 /* Build configuration list for PBXProject "EZForm" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 839EE8BC169529DE00B9DCA8;
 			productRefGroup = 839EE8C8169529DE00B9DCA8 /* Products */;
