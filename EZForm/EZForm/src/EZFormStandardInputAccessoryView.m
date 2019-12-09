@@ -78,8 +78,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.barStyle = UIBarStyleBlackTranslucent;
-
         NSString *nextString = NSLocalizedString(@"Next", @"EZForm Standard Input Accessory view - Next");
         NSString *prevString = NSLocalizedString(@"Previous", @"EZForm Standard Input Accessory view - Previous");
 
